@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PEPE GOLD</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Microsoft+YaHei:wght@700&display=swap');
+
+        body {
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: url('PEPEWHITE.png') no-repeat center center;
+            background-size: cover;
+            font-family: 'Microsoft YaHei', sans-serif;
+            font-weight: bold;
+            transition: background-color 0.3s ease, background 0.3s ease;
+            overflow: hidden; /* Prevent scrollbar due to falling images */
+            position: relative; /* Required for the pseudo-element */
+        }
+
+        body::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0);
+            transition: background 0.3s ease;
+            z-index: 1; /* Ensure it covers the background but not the content */
+        }
+
+        body.hovered::before {
+            background: rgba(255, 255, 255, 0.9); /* Gradually lighten to white */
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin-bottom: 30px;
+            transition: transform 0.3s ease;
+            z-index: 2; /* Ensure it stays above the darkening layer */
+        }
+
+        img:hover {
+            transform: scale(1.2);
+        }
+
+        .buttons {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+            justify-content: center;
+            z-index: 2; /* Ensure it stays above the darkening layer */
+        }
+
+        .button {
+            text-decoration: none;
+            padding: 15px 25px;
+            background-color: #bbbbbb;
+            color: rgb(12, 12, 12);
+            border-radius: 5px;
+            font-size: 16px;
+            font-weight: bold;
+            transition: transform 0.3s ease, background-color 0.3s ease;
+        }
+
+        .button:hover {
+            background-color: #525252;
+            transform: scale(1.1);
+        }
+
+        .toggle-btn {
+            margin-top: 20px;
+            padding: 10px 20px;
+            background-color: #333;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: bold;
+        }
+
+        .toggle-btn:hover {
+            background-color: #ffd72f;
+        }
+
+        @keyframes fall {
+            0% { transform: translateY(-100vh) rotate(0deg); }
+            100% { transform: translateY(100vh) rotate(360deg); }
+        }
+
+        .falling-img {
+            position: absolute;
+            top: -100px; /* Start above the viewport */
+            animation: fall linear infinite; /* Duration and easing will be set dynamically */
+        }
+    </style>
+</head>
+<body>
+    <img src="white_pepe.png" alt="Center Image" id="center-image">
+    <div class="buttons">
+        <a target="_blank" href="https://x.com/PEPEWHlTE" class="button">Twitter</a>
+        <a target="_blank" href="https://t.me/+GDwzpdcxamthZDQx" class="button">Telegram</a>
+        <a target="_blank" href="https://t.me/+GDwzpdcxamthZDQx" class="button">Chart</a>
+        <a target="_blank" href="" class="button">Buy</a>
+    </div>
+    CA: When we get to raydium, the ca here will be updated automatically
+
+    <script>
+        const img = document.getElementById('center-image');
+        const body = document.body;
+
+        img.addEventListener('mouseover', () => {
+            body.classList.add('hovered');
+        });
+
+        img.addEventListener('mouseout', () => {
+            body.classList.remove('hovered');
+        });
+    </script>
+</body>
+</html>
